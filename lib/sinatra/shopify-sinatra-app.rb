@@ -166,6 +166,8 @@ module Sinatra
       app.use Rack::MethodOverride
       app.use Rack::Session::Cookie, key: '#{base_url}.session',
                                      path: '/',
+                                     secure: true,
+                                     same_site: 'None',
                                      secret: app.settings.secret,
                                      expire_after: 60 * 30 # half an hour in seconds
 
